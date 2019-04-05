@@ -1,0 +1,8 @@
+# EXECUTE_APPIUM {bundlePath} WITH MAIN CLASS {mainClassName}
+=>
+
+LOAD {bundlePath} AS __temp_{%%rand1}.file
+CONVERT __temp_{%%rand1}.file TO script.java(compile) AS __temp_{%%rand2}.compiled
+CONVERT __temp_{%%rand2}.compiled TO script.java.selenium2(script) USING $({mainClassName}) AS __temp_{%%rand3}.selenium
+EXECUTE execute WITH __temp_{%%rand3}.selenium AS __temp_{%%rand4}.result
+ASSERT __temp_{%%rand4}.result IS success

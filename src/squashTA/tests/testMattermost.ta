@@ -1,0 +1,3 @@
+TEST :
+
+# EXECUTE_APPIUM clientLourd/src/main WITH MAIN CLASS test.mattermostTest
